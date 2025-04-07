@@ -24,37 +24,30 @@ return {
         command = "node",
         args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/php-debug-adapter/extension/out/phpDebug.js" }
       }
+
+      -- Function to dynamically generate path mappings
+      local function generate_path_mappings()
+        local mappings = {}
+        local workspace_folder = vim.fn.getcwd()
+        local workspace_basename = vim.fn.fnamemodify(workspace_folder, ":t")
+
+        -- Add the workspace root mapping - this is the most important one
+        mappings[workspace_folder] = "${workspaceFolder}"
+
+        -- -- Add Homebrew Apache path - this is needed for local development
+        -- local homebrew_path = "/opt/homebrew/var/www/" .. workspace_basename
+        -- mappings[homebrew_path] = "${workspaceFolder}"
+
+        return mappings
+      end
+
       dap.configurations.php = {
         {
           type = "php",
           request = "launch",
           name = "Listen for Xdebug",
           port = 9003,
-          pathMappings = {
-            -- Standard web server paths
-            ["/var/www/html"] = "${workspaceFolder}",
-
-            -- Homebrew Apache paths
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}"] = "${workspaceFolder}",
-
-            -- WordPress core with theme in subdirectory
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wordpress/wp-content/themes/${workspaceFolderBasename}"] = "${workspaceFolder}/wp-content/themes/${workspaceFolderBasename}",
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wordpress/wp-content/themes/theme"] = "${workspaceFolder}/theme",
-
-            -- WordPress with theme at project root
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wp-content/themes/${workspaceFolderBasename}"] = "${workspaceFolder}/wp-content/themes/${workspaceFolderBasename}",
-
-            -- When working directly in theme directory
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wordpress/wp-content/themes/${workspaceFolderBasename}"] = "${workspaceFolder}",
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wp-content/themes/${workspaceFolderBasename}"] = "${workspaceFolder}",
-
-            -- Flynt-specific structure
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/theme"] = "${workspaceFolder}/theme",
-
-            -- Common plugin paths
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wordpress/wp-content/plugins"] = "${workspaceFolder}/wp-content/plugins",
-            ["/opt/homebrew/var/www/${workspaceFolderBasename}/wp-content/plugins"] = "${workspaceFolder}/wp-content/plugins"
-          }
+          pathMappings = generate_path_mappings()
         },
         -- {
         --   type = "php",
