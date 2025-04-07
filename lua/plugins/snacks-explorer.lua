@@ -5,6 +5,7 @@
 
   Features:
   - Hidden files visibility by default
+  - Shows gitignored files
   - Lazy loading for better startup
   - Configurable via opts
 
@@ -14,12 +15,13 @@
 return {
   {
     "folke/snacks.nvim",
-    event = "BufReadPre",
+    event = "VeryLazy",
     opts = {
       picker = {
         sources = {
           explorer = {
             hidden = true,
+            ignored = true,
           },
         },
       },
