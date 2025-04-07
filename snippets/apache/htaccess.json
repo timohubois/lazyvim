@@ -1,0 +1,16 @@
+{
+  "PHP FastCGI Handler": {
+    "prefix": "AddHandler proxy:fcgi://127.0.0.1:9081 .php",
+    "body": [
+      "AddHandler proxy:fcgi://127.0.0.1:9081 .php"
+    ],
+    "description": "Add PHP-FPM FastCGI handler for Apache"
+  },
+  "Xdebug Session Cookie": {
+    "prefix": "Header add Set-Cookie \"XDEBUG_SESSION=start; path=/; SameSite=None; Secure\"",
+    "body": [
+      "Header add Set-Cookie \"XDEBUG_SESSION=start; path=/; SameSite=None; Secure\""
+    ],
+    "description": "Add Xdebug session cookie header for debugging"
+  }
+}
