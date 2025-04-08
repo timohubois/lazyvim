@@ -1,0 +1,562 @@
+{
+  "flynt-vscode-snippets-info": {
+    "prefix": "flyntSnippetsInfo",
+    "description": "Snippets for the Flynt WordPress theme",
+    "body": [
+      "Modified from the original source: github.com/flyntwp/flynt-vscode-snippets"
+    ]
+  },
+  "Text Field": {
+    "prefix": "flyntText",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'text'",
+      "],"
+    ]
+  },
+  "Text Area": {
+    "prefix": "flyntTextarea",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'textarea',",
+      "\t'maxlength' => ${3:0},",
+      "\t'rows' => ${4:8},",
+      "\t'new_lines' => '${5:wpautop}'",
+      "],"
+    ]
+  },
+  "Number": {
+    "prefix": "flyntNumber",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'number',",
+      "\t'min' => ${3:0},",
+      "\t'max' => ${4:0},",
+      "\t'step' => ${5:1}",
+      "],"
+    ]
+  },
+  "Email": {
+    "prefix": "flyntEmail",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'email'",
+      "],"
+    ]
+  },
+  "URL": {
+    "prefix": "flyntURL",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'url'",
+      "],"
+    ]
+  },
+  "Password": {
+    "prefix": "flyntPassword",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'password'",
+      "],"
+    ]
+  },
+  "WYSIWYG": {
+    "prefix": "flyntWYSIWYG",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'wysiwyg',",
+      "\t'tabs' => '${3:visual,text}',",
+      "\t'toolbar' => '${4:default}',",
+      "\t'media_upload' => ${5:0},",
+      "\t'delay' => ${6:1}",
+      "],"
+    ]
+  },
+  "oEmbed": {
+    "prefix": "flyntOEmbed",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'oembed'",
+      "],"
+    ]
+  },
+  "Image": {
+    "prefix": "flyntImage",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'image',",
+      "\t'return_format' => '${3:array}',",
+      "\t'preview_size' => '${4:thumbnail}',",
+      "\t'library' => '${5:all}',",
+      "\t'min_width' => ${6:0},",
+      "\t'max_width' => ${7:0},",
+      "\t'min_height' => ${8:0},",
+      "\t'max_height' => ${9:0},",
+      "\t'min_size' => ${10:0},",
+      "\t'max_size' => ${11:0},",
+      "\t'mime_types' => '${12:jpg,jpeg}'",
+      "],"
+    ]
+  },
+  "File": {
+    "prefix": "flyntFile",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'file',",
+      "\t'return_format' => '${3:array}',",
+      "\t'library' => '${4:all}',",
+      "\t'min_size' => ${5:0},",
+      "\t'max_size' => ${6:0},",
+      "\t'mime_types' => '${7:zip,pdf}'",
+      "],"
+    ]
+  },
+  "Gallery": {
+    "prefix": "flyntGallery",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'gallery',",
+      "\t'min' => ${3:0},",
+      "\t'max' => ${4:0},",
+      "\t'preview_size' => '${5:thumbnail}',",
+      "\t'library' => '${6:all}',",
+      "\t'min_width' => ${7:0},",
+      "\t'max_width' => ${8:0},",
+      "\t'min_height' => ${9:0},",
+      "\t'max_height' => ${10:0},",
+      "\t'min_size' => ${11:0},",
+      "\t'max_size' => ${12:0},",
+      "\t'mime_types' => '${13:jpg,jpeg}'",
+      "],"
+    ]
+  },
+  "Select": {
+    "prefix": "flyntSelect",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'select',",
+      "\t'allow_null' => ${3:0},",
+      "\t'multiple' => ${4:0},",
+      "\t'ui' => ${5:1},",
+      "\t'ajax' => ${6:0},",
+      "\t'choices' => [",
+      "\t\t'${7:}' => ${8:}",
+      "\t],",
+      "\t'default_value' => '${9:}'",
+      "],"
+    ]
+  },
+  "Checkbox": {
+    "prefix": "flyntCheckbox",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'checkbox',",
+      "\t'layout' => '${3:horizontal}',",
+      "\t'toggle' => ${4:0},",
+      "\t'choices' => [",
+      "\t\t'${5:}' => '${6:}'",
+      "\t],",
+      "\t'default_value' => '${7:}'",
+      "],"
+    ]
+  },
+  "TrueFalse": {
+    "prefix": "flyntTrueFalse",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'true_false',",
+      "\t'default_value' => ${3:0},",
+      "\t'ui' => ${4:1}",
+      "],"
+    ]
+  },
+  "Radio": {
+    "prefix": "flyntRadio",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'radio',",
+      "\t'other_choice' => ${3:0},",
+      "\t'save_other_choice' => ${4:0},",
+      "\t'layout' => '${5:horizontal}',",
+      "\t'choices' => [",
+      "\t\t'${6:}' => '${7:}'",
+      "\t],",
+      "\t'default_value' => '${8:}'",
+      "],"
+    ]
+  },
+  "User Role Selector": {
+    "prefix": "flyntUserRoleSelector",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'user_role_selector',",
+      "\t'return_value' => '${3:object}',",
+      "\t'allowed_roles' => [",
+      "\t\t'${4:}'",
+      "\t],",
+      "\t'field_type' => '${5:checkbox}'",
+      "],"
+    ]
+  },
+  "Post Object": {
+    "prefix": "flyntPostObject",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'post_object',",
+      "\t'post_type' => [",
+      "\t\t'${3:}'",
+      "\t],",
+      "\t'taxonomy' => [",
+      "\t\t'${4:}'",
+      "\t],",
+      "\t'allow_null' => ${5:0},",
+      "\t'multiple' => ${6:0},",
+      "\t'return_format' => '${7:object}'",
+      "],"
+    ]
+  },
+  "Page Link": {
+    "prefix": "flyntPageLink",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'page_link',",
+      "\t'post_type' => [",
+      "\t\t'${3:}'",
+      "\t],",
+      "\t'taxonomy' => [",
+      "\t\t'${4:}'",
+      "\t],",
+      "\t'allow_null' => ${5:0},",
+      "\t'multiple' => ${6:0}",
+      "],"
+    ]
+  },
+  "Relationship": {
+    "prefix": "flyntRelationship",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'relationship',",
+      "\t'post_type' => [",
+      "\t\t'${3:}'",
+      "\t],",
+      "\t'taxonomy' => [",
+      "\t\t'${4:}'",
+      "\t],",
+      "\t'filters' => [",
+      "\t\t'${5:}'",
+      "\t],",
+      "\t'elements' => [",
+      "\t\t'${6:}'",
+      "\t],",
+      "\t'min' => ${7:0},",
+      "\t'max' => ${8:0},",
+      "\t'return_format' => '${9:object}'",
+      "],"
+    ]
+  },
+  "Taxonomy": {
+    "prefix": "flyntTaxonomy",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'taxonomy',",
+      "\t'taxonomy' => '${3:}',",
+      "\t'field_type' => '${4:checkbox}',",
+      "\t'allow_null' => ${5:0},",
+      "\t'multiple' => ${6:0},",
+      "\t'add_term' => ${7:0},",
+      "\t'save_terms' => ${8:0},",
+      "\t'load_terms' => ${9:0},",
+      "\t'return_format' => '${10:object}'",
+      "],"
+    ]
+  },
+  "User": {
+    "prefix": "flyntUser",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'user',",
+      "\t'role' => [",
+      "\t\t'${3:}'",
+      "\t],",
+      "\t'allow_null' => ${4:0},",
+      "\t'multiple' => ${5:0}",
+      "],"
+    ]
+  },
+  "Google Map": {
+    "prefix": "flyntGoogleMap",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'google_map',",
+      "\t'center_lat' => ${3:0},",
+      "\t'center_lng' => ${4:0},",
+      "\t'zoom' => ${5:14},",
+      "\t'height' => ${6:400}",
+      "],"
+    ]
+  },
+  "Date Picker": {
+    "prefix": "flyntDatePicker",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'date_picker',",
+      "\t'display_format' => '${3:d.m.Y}',",
+      "\t'return_format' => '${4:Y-m-d}',",
+      "\t'first_day' => ${5:1}",
+      "],"
+    ]
+  },
+  "Date Time Picker": {
+    "prefix": "flyntDateTimePicker",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'date_time_picker',",
+      "\t'time_format' => '${3:h:mm tt}',",
+      "\t'show_date' => '${4:true}',",
+      "\t'display_format' => '${5:m/d/y}',",
+      "\t'return_format' => '${6:m/d/y}',",
+      "\t'show_week_number' => '${7:true}',",
+      "\t'picker' => 'slider',",
+      "\t'save_as_timestamp' => '${8:true}',",
+      "\t'get_as_timestamp' => '${9:true}'",
+      "],"
+    ]
+  },
+  "Time Picker": {
+    "prefix": "flyntTimePicker",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'time_picker',",
+      "\t'display_format' => '${3:g:i a}',",
+      "\t'return_format' => '${4:g:i a}'",
+      "],"
+    ]
+  },
+  "Color Picker": {
+    "prefix": "flyntColorPicker",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'color_picker',",
+      "\t'default_value' => '${3:#ffffff}'",
+      "],"
+    ]
+  },
+  "Message": {
+    "prefix": "flyntMessage",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'message',",
+      "\t'message' => __('${3:}', 'flynt'),",
+      "\t'new_lines' => '${4:wpautop}',",
+      "\t'esc_html' => ${5:1}",
+      "],"
+    ]
+  },
+  "Tab": {
+    "prefix": "flyntTab",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'tab',",
+      "\t'placement' => '${3:top}',",
+      "\t'endpoint' => ${4:0}",
+      "],"
+    ]
+  },
+  "Repeater": {
+    "prefix": "flyntRepeater",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'repeater',",
+      "\t'collapsed' => '${3:}',",
+      "\t'min' => ${4:0},",
+      "\t'max' => ${5:0},",
+      "\t'layout' => '${6:table}',",
+      "\t'button_label' => __('${7:Add Item}', 'flynt'),",
+      "\t'sub_fields' => [",
+      "\t\t${8:}",
+      "\t]",
+      "],"
+    ]
+  },
+  "Flexible Content": {
+    "prefix": "flyntFlexibleContent",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'flexible_content',",
+      "\t'button_label' => __('${3:Add Component}', 'flynt'),",
+      "\t'min' => ${4:0},",
+      "\t'max' => ${5:0},",
+      "\t'layouts' => [",
+      "\t\t${6:}",
+      "\t]",
+      "],"
+    ]
+  },
+  "Link": {
+    "prefix": "flyntLink",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'link',",
+      "\t'return_format' => '${3|array,url|}'",
+      "],"
+    ]
+  },
+  "Group": {
+    "prefix": "flyntGroup",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'group',",
+      "\t'sub_fields' => [",
+      "\t\t${3:}",
+      "\t]",
+      "],"
+    ]
+  },
+  "Accordion": {
+    "prefix": "flyntAccordion",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'accordion',",
+      "\t'open' => ${3:0},",
+      "\t'multi_expand' => ${4:1},",
+      "\t'endpoint' => ${5:0}",
+      "],"
+    ]
+  },
+  "Button Group": {
+    "prefix": "flyntButtonGroup",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'button_group',",
+      "\t'choices' => [",
+      "\t\t'${3:}' => __('${4:}', 'flynt')",
+      "\t],",
+      "\t'default_value' => '${5:}'",
+      "],"
+    ]
+  },
+  "Conditional Logic": {
+    "prefix": "flyntConditionalLogic",
+    "body": [
+      "'conditional_logic' => [",
+      "\t[",
+      "\t\t[",
+      "\t\t\t'fieldPath' => '${1:}',",
+      "\t\t\t'operator' => '${2:==}',",
+      "\t\t\t'value' => '${3:}'",
+      "\t\t]",
+      "\t]",
+      "],"
+    ]
+  },
+  "Register Fields": {
+    "prefix": "flyntRegisterFields",
+    "body": [
+      "use Flynt\\Api;",
+      "",
+      "Api::registerFields('${1:${TM_DIRECTORY/.*\\/(.+)$/${1:/capitalize}/}}', [",
+      "\t'layout' => [",
+      "\t\t'name' => '${2:}',",
+      "\t\t'label' => __('${3:}', 'flynt'),",
+      "\t\t'sub_fields' => [",
+      "\t\t\t${4:}",
+      "\t\t]",
+      "\t]",
+      "]);"
+    ]
+  },
+  "Add Translatable Options": {
+    "prefix": "flyntTranslatableOption",
+    "body": [
+      "Options::addTranslatable('${1:${TM_DIRECTORY/.*\\/(.+)$/${1:/capitalize}/}}', [",
+      "\t${2:}",
+      "]);"
+    ]
+  },
+  "Add Global Options": {
+    "prefix": "flyntGlobalOption",
+    "body": [
+      "Options::addGlobal('${1:${TM_DIRECTORY/.*\\/(.+)$/${1:/capitalize}/}}', [",
+      "\t${2:}",
+      "]);"
+    ]
+  },
+  "Add Component Data": {
+    "prefix": "flyntComponentData",
+    "body": [
+      "add_filter('Flynt/addComponentData?name=${1:${TM_DIRECTORY/.*\\/(.+)$/${1:/capitalize}/}}', function (\\$data${2:, \\$componentName}) {",
+      "\t${4:}",
+      "",
+      "\treturn \\$data;",
+      "}${3:, 10, 2});"
+    ]
+  }
+}
