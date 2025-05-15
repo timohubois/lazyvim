@@ -21,3 +21,6 @@ vim.keymap.set("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<
 -- Add a custom keybinding for terminal toggle on Mac German keyboard
 vim.keymap.set("n", "<M-C-S-7>", function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = "Toggle Terminal (Root Dir)" })
 vim.keymap.set("t", "<M-C-S-7>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+
+-- Add Option+Backspace to delete a word in insert mode
+vim.keymap.set("i", "<A-BS>", "<C-w>", { desc = "Delete word", remap = false })
