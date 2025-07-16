@@ -5,7 +5,9 @@
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
-    "lazyvim.plugins.extras.lang.php"
+    "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "install_version": 8,
   "news": {
