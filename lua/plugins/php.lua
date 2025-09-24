@@ -1,16 +1,21 @@
 --[[
-  PHP Xdebug configuration for Neovim
+  PHP development configuration for Neovim
 
-  Adds Xdebug debugging support for PHP projects with Homebrew Apache
+  Features:
+  - Xdebug debugging support
+  - phpactor with phpcs integration enabled
+  - Working directory awareness for WordPress themes
 --]]
 
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
-        "php-debug-adapter"
+        "php-debug-adapter",
+        "phpcs",
+        "php-cs-fixer"
       })
     end,
   },
@@ -66,5 +71,5 @@ return {
         -- }
       }
     end,
-  }
+  },
 }
