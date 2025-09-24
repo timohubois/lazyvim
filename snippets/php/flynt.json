@@ -42,6 +42,20 @@
       "],"
     ]
   },
+  "Range": {
+    "prefix": "flyntRange",
+    "body": [
+      "[",
+      "\t'label' => __('${1:}', 'flynt'),",
+      "\t'name' => '${2:}',",
+      "\t'type' => 'range',",
+      "\t'min' => ${3:0},",
+      "\t'max' => ${4:100},",
+      "\t'step' => ${5:1},",
+      "\t'default_value' => ${6:0},",
+      "],"
+    ]
+  },
   "Email": {
     "prefix": "flyntEmail",
     "body": [
