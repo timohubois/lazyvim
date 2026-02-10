@@ -1,40 +1,46 @@
---[[
-  Package.json dependency management for Neovim
-
-  Provides visual package version information and dependency management
-  commands for JavaScript/TypeScript projects with package.json files.
-
-  Features:
-  - Virtual text showing latest dependency versions
-  - Quick package update/install/delete commands
-  - Automatic package manager detection (npm/yarn/pnpm)
-
-  See: https://github.com/vuki656/package-info.nvim
---]]
-
 return {
   "vuki656/package-info.nvim",
-  dependencies = { "MunifTanjim/nui.nvim" },
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "folke/which-key.nvim",
+  },
   event = { "BufRead package.json", "BufNewFile package.json" },
   config = function()
     require("package-info").setup({
       hide_up_to_date = true,
     })
-    
+
     -- Link to existing diagnostic colors to match theme
     vim.api.nvim_set_hl(0, "PackageInfoOutdatedVersion", { link = "DiagnosticError" })
     vim.api.nvim_set_hl(0, "PackageInfoUpToDateVersion", { link = "DiagnosticOk" })
     vim.api.nvim_set_hl(0, "PackageInfoInErrorVersion", { link = "DiagnosticWarn" })
 
-    -- Set up buffer-local keymaps only for package.json
+    -- Register which-key groups following official keybinding convention
+    local wk = require("which-key")
+    wk.add({
+      { "<leader>n", group = "npm/package" },
+    })
+
+    -- Helper function to set buffer-local keybindings
+    local function set_package_info_keymaps(bufnr)
+      vim.keymap.set("n", "<leader>ns", require("package-info").show, { buffer = bufnr, desc = "Show Package Versions" })
+      vim.keymap.set("n", "<leader>nc", require("package-info").hide, { buffer = bufnr, desc = "Hide Package Versions" })
+      vim.keymap.set("n", "<leader>nt", require("package-info").toggle, { buffer = bufnr, desc = "Toggle Package Versions" })
+      vim.keymap.set("n", "<leader>nu", require("package-info").update, { buffer = bufnr, desc = "Update Package" })
+      vim.keymap.set("n", "<leader>nd", require("package-info").delete, { buffer = bufnr, desc = "Delete Package" })
+      vim.keymap.set("n", "<leader>ni", require("package-info").install, { buffer = bufnr, desc = "Install New Package" })
+      vim.keymap.set("n", "<leader>np", require("package-info").change_version, { buffer = bufnr, desc = "Change Package Version" })
+    end
+
+    -- Set keymaps for current buffer (handles initial load)
+    set_package_info_keymaps(0)
+
+    -- Register autocmd for future package.json buffers
     vim.api.nvim_create_autocmd("BufRead", {
+      group = vim.api.nvim_create_augroup("PackageInfoKeymaps", { clear = true }),
       pattern = "package.json",
-      callback = function(ev)
-        vim.keymap.set("n", "<leader>cpt", function() require("package-info").toggle() end, { buffer = ev.buf, desc = "Toggle package info" })
-        vim.keymap.set("n", "<leader>cpu", function() require("package-info").update() end, { buffer = ev.buf, desc = "Update package" })
-        vim.keymap.set("n", "<leader>cpd", function() require("package-info").delete() end, { buffer = ev.buf, desc = "Delete package" })
-        vim.keymap.set("n", "<leader>cpi", function() require("package-info").install() end, { buffer = ev.buf, desc = "Install package" })
-        vim.keymap.set("n", "<leader>cpv", function() require("package-info").change_version() end, { buffer = ev.buf, desc = "Change version" })
+      callback = function(event)
+        set_package_info_keymaps(event.buf)
       end,
     })
   end,
