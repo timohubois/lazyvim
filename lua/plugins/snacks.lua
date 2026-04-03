@@ -1,13 +1,9 @@
 --[[
-  Snacks Explorer for Neovim
+  Snacks for Neovim
 
-  Provides enhanced file explorer with hidden files support.
-
-  Features:
-  - Hidden files visibility by default
-  - Shows gitignored files
-  - Lazy loading for better startup
-  - Configurable via opts
+  Configures Snacks with:
+  - picker defaults for hidden and ignored files
+  - image support using Snacks' default image settings
 
   See: https://github.com/folke/snacks.nvim
 --]]
@@ -17,6 +13,7 @@ return {
     "folke/snacks.nvim",
     event = "VeryLazy",
     opts = {
+      image = {},
       picker = {
         sources = {
           files = {
