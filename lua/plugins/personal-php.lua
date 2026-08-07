@@ -1,6 +1,8 @@
 --[[
   PHP development configuration for Neovim
 
+  Configures PHP debugging, language tooling, and project-aware behavior.
+
   Features:
   - Xdebug debugging support
   - phpactor with phpcs integration enabled
@@ -15,7 +17,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "php-debug-adapter",
         "phpcs",
-        "php-cs-fixer"
+        "php-cs-fixer",
       })
     end,
   },
@@ -27,7 +29,7 @@ return {
       dap.adapters.php = {
         type = "executable",
         command = "node",
-        args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/php-debug-adapter/extension/out/phpDebug.js" }
+        args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/php-debug-adapter/extension/out/phpDebug.js" },
       }
 
       -- Function to dynamically generate path mappings
@@ -52,7 +54,7 @@ return {
           request = "launch",
           name = "Listen for Xdebug",
           port = 9003,
-          pathMappings = generate_path_mappings()
+          pathMappings = generate_path_mappings(),
         },
         -- {
         --   type = "php",

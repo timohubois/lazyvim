@@ -10,6 +10,7 @@
     "lazyvim.plugins.extras.lang.nix",
     "lazyvim.plugins.extras.lang.php",
     "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.lang.twig",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns"

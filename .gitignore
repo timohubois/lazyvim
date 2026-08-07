@@ -7,3 +7,13 @@ foo.*
 *.log
 data
 .DS_Store
+
+# Omarchy-provided Neovim configuration.
+.neoconf.json
+lua/config/remote_clipboard.lua
+lua/plugins/all-themes.lua
+lua/plugins/disable-news-alert.lua
+lua/plugins/omarchy-theme-hotreload.lua
+lua/plugins/snacks-animated-scrolling-off.lua
+lua/plugins/theme.lua
+plugin/after/transparency.lua

@@ -48,11 +48,13 @@ return {
             "--indent=2",
             "--max-attribute-length=80",
             "--max-line-length=120",
-            "--profile", "twig",
+            "--profile",
+            "twig",
             "--format-attribute-template-tags",
             "--preserve-blank-lines",
-            "--custom-html", "flynt-component",
-            "-"
+            "--custom-html",
+            "flynt-component",
+            "-",
           },
           cwd = require("conform.util").root_file({
             "pyproject.toml",

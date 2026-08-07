@@ -1,9 +1,11 @@
 --[[
   Snacks for Neovim
 
-  Configures Snacks with:
-  - picker defaults for hidden and ignored files
-  - image support using Snacks' default image settings
+  Configures Snacks picker and image defaults.
+
+  Features:
+  - Picker defaults for hidden and ignored files
+  - Image support using Snacks' default image settings
 
   See: https://github.com/folke/snacks.nvim
 --]]

@@ -1,8 +1,11 @@
 --[[
   GitHub Copilot configuration for Neovim
 
-  Configures GitHub Copilot with telemetry disabled.
-  This configuration will only take effect if copilot is actually loaded.
+  Configures GitHub Copilot with privacy-conscious defaults.
+
+  Features:
+  - Telemetry disabled
+  - Optional configuration only when Copilot is loaded
 --]]
 
 return {
@@ -13,10 +16,10 @@ return {
       server_opts_overrides = {
         settings = {
           telemetry = {
-            telemetryLevel = "off"
-          }
-        }
-      }
-    }
-  }
+            telemetryLevel = "off",
+          },
+        },
+      },
+    },
+  },
 }
