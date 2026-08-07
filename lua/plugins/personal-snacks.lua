@@ -14,9 +14,6 @@ return {
   {
     "folke/snacks.nvim",
     event = "VeryLazy",
-    init = function()
-      vim.g.snacks_animate = false
-    end,
     opts = {
       image = {},
       picker = {
